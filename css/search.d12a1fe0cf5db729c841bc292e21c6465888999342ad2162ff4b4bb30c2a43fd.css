@@ -1,0 +1,69 @@
+#search-suggestions {
+  top: 100%;
+  margin-top: 0.5rem;
+  position: absolute;
+  width: 100%;
+  user-select: none; }
+  #search-suggestions .suggestion-item {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; }
+    #search-suggestions .suggestion-item.active {
+      color: rgb( var(--color-background) );
+      background: rgb( var(--color-primary) ); }
+
+#progress-container {
+  padding: 1rem; }
+  #progress-container #progress-text {
+    padding-bottom: 0; }
+    :root:not([noscript]) #progress-container #progress-text {
+      transition: padding 300ms ease-in-out; }
+    :root:not([noscript]) #progress-container #progress-text {
+      transition-delay: 500ms; }
+  #progress-container #progress-bar-container {
+    height: 0;
+    overflow: hidden; }
+    :root:not([noscript]) #progress-container #progress-bar-container {
+      transition: height 300ms ease-in-out; }
+    :root:not([noscript]) #progress-container #progress-bar-container {
+      transition-delay: 500ms; }
+  #progress-container.expanded #progress-bar-container {
+    height: 1rem; }
+  #progress-container.expanded #progress-text {
+    padding-bottom: 0.5rem; }
+  #progress-container #progress-bar {
+    height: 1rem;
+    background: rgb( var(--color-text-default) );
+    border-radius: 9999px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba( var(--color-surface) / var(--ui-bg-opacity) );
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"), rgba( var(--color-surface) / var(--ui-bg-opacity) );
+    border: 1px solid rgba( var(--color-primary) / var(--ui-border-opacity) );
+    box-shadow: 0 10px 15px -3px rgba( var(--color-shadow) / var(--ui-shadow-opacity) ), 0 4px 6px -4px rgba( var(--color-shadow) / var(--ui-shadow-opacity) ); }
+    #progress-container #progress-bar #progress-fill {
+      height: 100%;
+      width: 0%;
+      transition: width 0.8s ease-out;
+      background: repeating-linear-gradient(45deg, rgb( var(--color-primary) ) 0, rgb( var(--color-primary) ) 25%, rgb( var(--color-surface) ) 25%, rgb( var(--color-surface) ) 50%);
+      background-size: 1rem 1rem;
+      animation: stripes 1s linear infinite; }
+
+@keyframes stripes {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 1rem 0; } }
+
+.search-result {
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+  background: rgba( var(--color-surface) / var(--ui-bg-opacity) );
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"), rgba( var(--color-surface) / var(--ui-bg-opacity) );
+  border: 1px solid rgba( var(--color-primary) / var(--ui-border-opacity) );
+  box-shadow: 0 10px 15px -3px rgba( var(--color-shadow) / var(--ui-shadow-opacity) ), 0 4px 6px -4px rgba( var(--color-shadow) / var(--ui-shadow-opacity) ); }
+  .search-result .search-result-url:hover {
+    text-decoration: underline; }
